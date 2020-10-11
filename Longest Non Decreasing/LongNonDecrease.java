@@ -57,6 +57,78 @@ public class LongNonDecrease {
 		}
 		
 		
+		//prints longest non decreasing sequence using multi-dimensional arrays
+		//EXTRA CREDIT
+		public void printNonDecreaseMulti() {
+		int [][] nonDecreaseArray = new int [25][26];
+			int longLength=0;
+			int k=0;
+			int j;
+			int done=0;
+			
+			
+			for (i = 0; i <= arrayLength-1; i++) {
+				nonDecreaseArray[i][0]=1;
+				nonDecreaseArray[i][1] = numbers[k];
+				k++;
+				
+				if (k == arrayLength) {
+					break;
+				}
+				
+				
+				
+				for (j = 2; j <= arrayLength; j++) {
+					if (numbers[k] >= numbers[k-1]) {
+						nonDecreaseArray[i][j] = numbers[k];
+						nonDecreaseArray[i][0]++;
+						k++;
+						
+						if (k == arrayLength) {
+							done=1;
+							break;
+						}
+						
+						
+					}else {
+//						if (nonDecreaseArray[i][0] > longLength) {
+//							longLength = nonDecreaseArray[i][0];
+							break;
+//						}
+						
+					}//end of else 
+					
+					
+				}//end of inner for loop
+				
+				if (nonDecreaseArray[i][0] > longLength) {
+					longLength = nonDecreaseArray[i][0];
+					
+				}
+			
+				if (done==1) {
+					break;
+				}
+				
+			}//end of outer for loop
+			
+			
+			
+			for (i = 0; i < 25; i++) {
+				if (nonDecreaseArray[i][0] == longLength) {
+					System.out.print("\n");
+					for (j = 1; j <= longLength; j++) {
+						System.out.print(nonDecreaseArray[i][j] + ", ");
+						
+					}//end of inner
+				}
+			}//end of outer
+			
+		}
+		
+		
+		
+		
 		public void printNonDecrease() {
 			
 			//use array[0] as the length
@@ -89,7 +161,7 @@ public class LongNonDecrease {
 			int array25[] = new int [26];
 			
 			int j; //index for numbers[]
-			int k=2;
+			int k=2; //index for array that we're building 
 			int length=0; //current length of longest sequence
 			
 			//case1
@@ -949,6 +1021,9 @@ public class LongNonDecrease {
 			
 			
 		}//end of printNonDecrease method
+		
+		
+	
 		
 
 		

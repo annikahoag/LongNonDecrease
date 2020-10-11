@@ -37,6 +37,7 @@ public class Main {
 					
 				case 2: userInput = 2;
 						nonDecrease.printNonDecrease();
+						nonDecrease.printNonDecreaseMulti();
 						break;
 				
 				
