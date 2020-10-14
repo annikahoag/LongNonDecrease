@@ -128,7 +128,7 @@ public class LongNonDecrease {
 		
 		
 		
-		
+		//print longest non decreasing sequence using 1D arrays
 		public void printNonDecrease() {
 			
 			//use array[0] as the length
@@ -860,7 +860,7 @@ public class LongNonDecrease {
 			}
 			
 
-			
+			//prints the longest non decreasing sequence(s)
 			if (arrayLength==0){
 				System.out.println("You haven't entered any numbers yet.");
 			}else {
